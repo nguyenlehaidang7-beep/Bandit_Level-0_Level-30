@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OverTheWire Bandit Report - Nguyễn Lê Hải Đăng</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background-color: #1e293b;
+            color: #ffffff;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 { margin: 0; font-size: 24px; color: #38bdf8; }
+        .header p { margin: 10px 0 0; color: #cbd5e1; font-size: 16px; }
+        .content { padding: 30px; line-height: 1.6; }
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+            justify-content: center;
+        }
+        .btn {
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #ffffff;
+            transition: opacity 0.2s;
+        }
+        .btn:hover { opacity: 0.9; }
+        .btn-pdf { background-color: #ef4444; }
+        .btn-github { background-color: #333333; }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Thực Hành: OverTheWire Bandit</h1>
+        <p>Thực hiện bởi: Hải Đăng </p>
+    </div>
+    
+    <div class="content">
+        <p>Đây là tài liệu ghi chú quá trình tôi giải quyết các thử thách bảo mật từ <strong>Level 0 đến Level 30</strong> trên hệ thống OverTheWire Bandit.</p>
+        <p>Qua dự án này, tôi đã rèn luyện kỹ năng thao tác Linux CLI, xử lý phân quyền (SUID/EUID), tự động hóa tác vụ bằng Bash Script/Cron, và các kỹ thuật mã hóa/giải mã cơ bản. Đặc biệt, báo cáo này đã được theo sát, phản biện và tối ưu hóa thông qua quá trình làm việc trực tiếp với Mentor.</p>
+        
+        <div class="buttons">
+            <!-- Link này trỏ chính xác đến tên file PDF hiện tại trong kho của bạn -->
+            <a href="Bandit%20level%200-level%2030.pdf" class="btn btn-pdf" target="_blank">📄 Mở lớn PDF</a>
+            <a href="https://github.com/nguyenlehaidang7-beep/Bandit_Level-0_Level-30" class="btn btn-github">💻 Quay lại GitHub</a>
+        </div>
+
+        <!-- Khung hiển thị PDF trực tiếp trên web -->
+        <iframe src="Bandit%20level%200-level%2030.pdf" title="Bandit Report PDF"></iframe>
+    </div>
+</div>
+
+</body>
+</html>
