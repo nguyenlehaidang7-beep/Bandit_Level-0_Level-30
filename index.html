@@ -1,84 +1,309 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OverTheWire Bandit Report - Nguyễn Lê Hải Đăng</title>
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>OverTheWire Bandit - Nguyễn Lê Hải Đăng</title>
+
     <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family:
+                'Segoe UI',
+                Tahoma,
+                Geneva,
+                Verdana,
+                sans-serif;
+
             background-color: #f8fafc;
+
             color: #334155;
+
             margin: 0;
+
             padding: 40px 20px;
-            display: flex;
-            justify-content: center;
         }
+
         .container {
-            max-width: 800px;
+
+            max-width: 850px;
+
             width: 100%;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+            margin: auto;
+
+            background: #ffffff;
+
+            border-radius: 10px;
+
             overflow: hidden;
+
+            box-shadow:
+                0 4px 15px rgba(0, 0, 0, 0.10);
         }
+
         .header {
+
             background-color: #1e293b;
-            color: #ffffff;
-            padding: 30px;
+
+            color: white;
+
+            padding: 35px;
+
             text-align: center;
         }
-        .header h1 { margin: 0; font-size: 24px; color: #38bdf8; }
-        .header p { margin: 10px 0 0; color: #cbd5e1; font-size: 16px; }
-        .content { padding: 30px; line-height: 1.6; }
-        .buttons {
-            display: flex;
-            gap: 15px;
-            margin-top: 25px;
-            justify-content: center;
+
+        .header h1 {
+
+            margin: 0;
+
+            color: #38bdf8;
+
+            font-size: 28px;
         }
+
+        .header p {
+
+            margin-top: 10px;
+
+            color: #cbd5e1;
+
+            font-size: 16px;
+        }
+
+        .content {
+
+            padding: 30px;
+
+            line-height: 1.7;
+        }
+
+        .content p {
+
+            margin-bottom: 18px;
+        }
+
+        .buttons {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            justify-content: center;
+
+            margin: 25px 0;
+        }
+
         .btn {
-            padding: 10px 20px;
+
+            display: inline-block;
+
+            padding: 10px 18px;
+
             border-radius: 6px;
+
             text-decoration: none;
-            font-weight: bold;
-            color: #ffffff;
+
+            font-weight: 600;
+
+            color: white;
+
             transition: opacity 0.2s;
         }
-        .btn:hover { opacity: 0.9; }
-        .btn-pdf { background-color: #ef4444; }
-        .btn-github { background-color: #333333; }
-        iframe {
-            width: 100%;
-            height: 600px;
-            border: 1px solid #e2e8f0;
-            border-radius: 6px;
+
+        .btn:hover {
+
+            opacity: 0.8;
+        }
+
+        .btn-pdf {
+
+            background-color: #ef4444;
+        }
+
+        .btn-github {
+
+            background-color: #1e293b;
+        }
+
+        .report {
+
             margin-top: 30px;
         }
+
+        .report h2 {
+
+            font-size: 20px;
+
+            color: #0f172a;
+
+            margin-bottom: 15px;
+        }
+
+        iframe {
+
+            width: 100%;
+
+            height: 700px;
+
+            border: 1px solid #e2e8f0;
+
+            border-radius: 8px;
+
+            background-color: #f8fafc;
+        }
+
+        .footer {
+
+            text-align: center;
+
+            padding: 20px;
+
+            border-top: 1px solid #e2e8f0;
+
+            color: #64748b;
+
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 20px 10px;
+            }
+
+            .header {
+                padding: 25px 15px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            iframe {
+                height: 500px;
+            }
+        }
+
     </style>
+
 </head>
+
+
 <body>
 
 <div class="container">
+
+    <!-- HEADER -->
+
     <div class="header">
-        <h1>Thực Hành: OverTheWire Bandit</h1>
-        <p>Thực hiện bởi: Hải Đăng </p>
+
+        <h1>
+            Thực Hành OverTheWire Bandit
+        </h1>
+
+        <p>
+            Linux & Cybersecurity Self-Learning
+        </p>
+
+        <p>
+            Thực hiện bởi: Nguyễn Lê Hải Đăng
+        </p>
+
     </div>
-    
+
+
+    <!-- CONTENT -->
+
     <div class="content">
-        <p>Đây là tài liệu ghi chú và chi tiết quá trình tôi giải quyết các thử thách bảo mật từ <strong>Level 0 đến Level 30</strong> trên hệ thống OverTheWire Bandit.</p>
-        <p>Qua dự án này, tôi đã rèn luyện kỹ năng thao tác Linux CLI, xử lý phân quyền (SUID/EUID), tự động hóa tác vụ bằng Bash Script/Cron, và các kỹ thuật mã hóa/giải mã cơ bản.</p>
-        
+
+        <p>
+            Đây là tài liệu ghi chú và tổng hợp quá trình
+            tự học và thực hành các thử thách bảo mật
+            trên hệ thống OverTheWire Bandit từ
+            <strong>Level 0 đến Level 30</strong>.
+        </p>
+
+
+        <p>
+            Nội dung tập trung vào việc rèn luyện thao tác
+            Linux Command Line, quản lý file và quyền truy cập,
+            SSH, xử lý dữ liệu, networking cơ bản,
+            SUID/EUID, Bash Script, Cron,
+            cũng như các kỹ thuật mã hóa và giải mã cơ bản.
+        </p>
+
+
+        <!-- BUTTONS -->
+
         <div class="buttons">
-            <!-- Link này trỏ chính xác đến tên file PDF hiện tại trong kho của bạn -->
-            <a href="Bandit%20level%200-level%2030.pdf" class="btn btn-pdf" target="_blank">📄 Mở lớn PDF</a>
-            <a href="https://github.com/nguyenlehaidang7-beep/Bandit_Level-0_Level-30" class="btn btn-github">💻 Quay lại GitHub</a>
+
+            <a
+                href="Bandit%20level%200-level%2030.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-pdf">
+
+                📄 Mở báo cáo PDF
+
+            </a>
+
+
+            <a
+                href="https://github.com/nguyenlehaidang7-beep/Bandit_Level-0_Level-30"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-github">
+
+                💻 GitHub Repository
+
+            </a>
+
         </div>
 
-        <!-- Khung hiển thị PDF trực tiếp trên web -->
-        <iframe src="Bandit%20level%200-level%2030.pdf" title="Bandit Report PDF"></iframe>
+
+        <!-- PDF -->
+
+        <div class="report">
+
+            <h2>
+                Báo cáo thực hành
+            </h2>
+
+            <iframe
+                src="Bandit%20level%200-level%2030.pdf"
+                title="OverTheWire Bandit Report">
+            </iframe>
+
+        </div>
+
     </div>
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        OverTheWire Bandit Level 0–30
+        ·
+        Self-Learning Security Lab
+
+    </div>
+
 </div>
 
 </body>
+
 </html>
